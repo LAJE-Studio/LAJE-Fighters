@@ -106,7 +106,7 @@ namespace LAJEFighters.Scripts.Editor {
 
                 foreach (var state in toRemove) {
                     motor.RemoveState(state);
-                    DestroyImmediate(state);
+                    DestroyImmediate(state, true);
                 }
             }
 

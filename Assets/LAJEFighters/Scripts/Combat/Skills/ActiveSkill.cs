@@ -5,7 +5,9 @@ namespace LAJEFighters.Scripts.Combat.Skills {
         public abstract void Execute(ICombatant combatant);
     }
 
-    public abstract class Attack : ActiveSkill {
-        
+    public abstract class Attack : ActiveSkill, IDamageSource {
+        public abstract uint Damage {
+            get;
+        }
     }
 }

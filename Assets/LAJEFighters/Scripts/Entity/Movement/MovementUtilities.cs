@@ -1,4 +1,5 @@
-﻿using LAJEFighters.Scripts.Entity.Movement.Configurations;
+﻿using LAJEFighters.Scripts.Data;
+using LAJEFighters.Scripts.Entity.Movement.Configurations;
 using UnityEngine;
 
 namespace LAJEFighters.Scripts.Entity.Movement {
@@ -20,7 +21,7 @@ namespace LAJEFighters.Scripts.Entity.Movement {
             min.x += config.JumpCheckPadding;
             max.x -= config.JumpCheckPadding;
             min.y -= config.JumpCheckLength;
-            return Physics2D.OverlapArea(min, max);
+            return Physics2D.OverlapArea(min, max, GameResources.Instance.WorldMask);
         }
     }
 }

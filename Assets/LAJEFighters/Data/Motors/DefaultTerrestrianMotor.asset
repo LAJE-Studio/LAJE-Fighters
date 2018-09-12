@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: DefaultTerrestrianMotor
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 114628460813236022}
---- !u!114 &114628460813236022
+  - {fileID: 114242413563666248}
+--- !u!114 &114242413563666248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

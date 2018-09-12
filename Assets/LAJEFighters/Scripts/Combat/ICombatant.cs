@@ -1,5 +1,7 @@
 ﻿using LAJEFighters.Scripts.Combat.Animation;
 using LAJEFighters.Scripts.Utilities.Properties;
+using UnityEngine;
+using UnityUtilities.Misc;
 
 namespace LAJEFighters.Scripts.Combat {
     public interface IDamageSource {
@@ -15,6 +17,10 @@ namespace LAJEFighters.Scripts.Combat {
     }
 
     public interface IDamageable {
+        Transform Transform {
+            get;
+        }
+
         uint Health {
             get;
         }
@@ -32,11 +38,20 @@ namespace LAJEFighters.Scripts.Combat {
             get;
         }
 
+        bool Invulnerable {
+            get;
+        }
+
         void Kill();
         void Damage(DamageContext context);
     }
 
-    public interface ICombatant : IDamageable {
+    public interface ICombatant : IDamageable, IDamageDealer {
+        Direction CurrentDirection {
+            get;
+            set;
+        }
+
         CombatantAnimatorUpdater AnimatorUpdater {
             get;
         }
@@ -46,6 +61,11 @@ namespace LAJEFighters.Scripts.Combat {
         private IDamageable damageable;
         private IDamageDealer dealer;
         private IDamageSource source;
+        public DamageContext(IDamageable damageable, IDamageDealer dealer, IDamageSource source) {
+            this.damageable = damageable;
+            this.dealer = dealer;
+            this.source = source;
+        }
 
         public uint FinalDamage {
             get {

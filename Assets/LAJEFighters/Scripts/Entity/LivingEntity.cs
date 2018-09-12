@@ -3,6 +3,7 @@ using LAJEFighters.Scripts.Combat.Animation;
 using LAJEFighters.Scripts.Utilities.Math;
 using LAJEFighters.Scripts.Utilities.Properties;
 using UnityEngine;
+using UnityUtilities.Misc;
 
 namespace LAJEFighters.Scripts.Entity {
     public class LivingEntity : Entity, ICombatant {
@@ -14,6 +15,18 @@ namespace LAJEFighters.Scripts.Entity {
 
         [SerializeField]
         private uint health;
+
+        [SerializeField]
+        private bool invulnerable;
+
+        [SerializeField]
+        private FloatProperty damageMultiplier;
+
+        public Transform Transform {
+            get {
+                return transform;
+            }
+        }
 
         public uint Health {
             get {
@@ -43,6 +56,12 @@ namespace LAJEFighters.Scripts.Entity {
             }
         }
 
+        public bool Invulnerable {
+            get {
+                return invulnerable;
+            }
+        }
+
         public void Kill() {
             health = 0;
         }
@@ -51,9 +70,20 @@ namespace LAJEFighters.Scripts.Entity {
             //TODO implement:
         }
 
+        public Direction CurrentDirection {
+            get;
+            set;
+        }
+
         public CombatantAnimatorUpdater AnimatorUpdater {
             get {
                 return animatorUpdater;
+            }
+        }
+
+        public FloatProperty DamageMultiplier {
+            get {
+                return damageMultiplier;
             }
         }
     }
