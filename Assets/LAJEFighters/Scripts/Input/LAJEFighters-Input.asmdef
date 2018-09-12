@@ -1,0 +1,10 @@
+{
+    "name": "LAJEFighters-Input",
+    "references": [
+        "LAJEFighters-Utilities"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

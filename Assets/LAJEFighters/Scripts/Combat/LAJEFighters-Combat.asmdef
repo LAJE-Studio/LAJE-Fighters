@@ -1,0 +1,11 @@
+{
+    "name": "LAJEFighters-Combat",
+    "references": [
+        "LAJEFighters-Utilities",
+        "LAJEFighters-Animation"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

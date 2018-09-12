@@ -1,0 +1,10 @@
+{
+    "name": "LAJEFighters-Data",
+    "references": [
+        "LAJEFighters-Utilities"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
